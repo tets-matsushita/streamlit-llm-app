@@ -1,5 +1,4 @@
 #「app.py」にコードを記述してください。
-pip install streamlit langchain openai python-dotenv
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, ChatMessage
