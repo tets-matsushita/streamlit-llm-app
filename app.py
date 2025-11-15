@@ -45,5 +45,3 @@ if st.button("送信"):
         st.write(answer)
     else:
         st.write("質問を入力してください。")
-
-streamlit run app.py
