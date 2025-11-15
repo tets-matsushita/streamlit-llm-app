@@ -1,4 +1,5 @@
 #「app.py」にコードを記述してください。
+pip install langchain langchain-openai streamlit python-dotenv
 import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage, ChatMessage
@@ -45,3 +46,5 @@ if st.button("送信"):
         st.write(answer)
     else:
         st.write("質問を入力してください。")
+
+streamlit run app.py
