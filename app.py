@@ -1,11 +1,13 @@
-#「app.py」にコードを記述してください。
 import streamlit as st
 from langchain_openai import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage
+from langchain_core.messages import SystemMessage, HumanMessage
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+
+# OpenAIのAPIキーを環境変数から取得
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 # APIキーが設定されていない場合の警告
 if not OPENAI_API_KEY:
