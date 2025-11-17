@@ -38,9 +38,13 @@ def get_expert_response(input_text: str, expert_type: str) -> str:
         messages = [system_message, human_message]
 
         # LLMにメッセージを渡して回答を取得
-        response = llm(messages)
+        # LangChain のバージョンにより呼び方が異なるため、一般的な呼び出し方で対応
+        # 1) generate を使う場合（多くのバージョンで利用可能）
+        result = llm.generate(messages=[messages])
+        # result.generations は List[List[Generation]] になっている想定
+        response_text = result.generations[0][0].message.content
 
-        return response.content
+        return response_text
     except Exception as e:
         return f"エラーが発生しました: {str(e)}"
 
